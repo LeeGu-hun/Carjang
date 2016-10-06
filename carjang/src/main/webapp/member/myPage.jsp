@@ -16,7 +16,7 @@
 		</div>
 		<div id="middle">></div>
 		<div id="right">
-			<div id="pwBox">
+			<div id="pwBox"> 
 				<form action="${pageContext.request.contextPath}/member/changePassword" method="post" commandName="ChangePwdCommand">
 				<div class="chgHeader" id="changedPwHeader">&nbsp;&nbsp;&nbsp;비밀번호 변경</div>
 				<div id="changedPwContent">

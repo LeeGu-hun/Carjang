@@ -9,7 +9,7 @@
 </head>
 <body text="black" link="black" vlink="black" alink="black">
 	<%@include file="/include/header.jsp"%>
-	<div id="container">
+	<div id="container"> 
 		<div id="left">
 			<div class="leftMenu">
 				<a href="#" style="text-decoration: none">내정보</a>

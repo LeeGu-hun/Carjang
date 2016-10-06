@@ -111,7 +111,7 @@ $(document).ready(function() {
 				<img id="beach1"
 					src="<%=request.getContextPath()%>/images/beach1.jpg">
 
-			</div>
+			</div> 
 
 			<!-- 네비게이션 -->
 			<div id="button_wrap">

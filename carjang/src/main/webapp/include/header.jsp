@@ -125,7 +125,7 @@
 								<div id="agree">회원가입을 하면 카장의
 												<span id="agree2">서비스 약관, 결제 서비스 약관, 개인정보 보호정책, 환불 정책</span>
 												에 동의하는 것으로 간주됩니다.
-								</div><br> 
+								</div><br>  
 								<input id="btnJoin2" type="submit" value="가입하기"/>
 							</div>
 						</form>
