@@ -34,19 +34,18 @@ public class AuthService {
 		);
 	}
 	
-	public DriverInfo authenticate2(String email) {
-		Driver driver = daoMember.selectById2(email);
-		if (driver == null) {
+	public Member authenticate(String email) {
+		Member member = daoMember.selectById(email);
+		if (member == null) {
 			throw new MemberNotFoundException();
 		}
-		return new DriverInfo(
-				driver.getDrv_id(),
-				driver.getDrv_lisc(),
-				driver.getDrv_phone(),
-				driver.getDrv_mark(),
-				driver.getDrv_use(),
-				driver.getDrv_bank(),
-				driver.getDrv_account()
+		return new Member(
+				member.getMem_email(), 
+				member.getMem_password(), 
+				member.getMem_name(), 
+				member.getMem_count(), 
+				member.getMem_mileage(), 
+				member.getDate()
 		);
 	}
 }

@@ -61,72 +61,88 @@ public class MemberController {
    } 
 
    @RequestMapping(value = "/member/regist", method = RequestMethod.POST)
-   public String handleJoin(RegisterRequest rr, Errors errors, Model model, HttpSession session) {
-      System.out.println("handleJoin");
-      new RegisterRequestValidator().validate(rr, errors);
-      if (errors.hasErrors())
-         return "main";
-      try {
-         System.out.println("Controller " + rr.getEmail());
-         memberRegisterService.regist(rr);
-         model.addAttribute("memberName", rr.getName());
-         return "main";
-      } catch (AlreadyExistingMemberException ex) {
-         errors.rejectValue("email", "duplicate");
-         return "main";
-      }
-   }
-   @RequestMapping(value="/member/myPage/{email}", method = RequestMethod.GET)
-   public String detai2(@PathVariable String email, HttpSession session, Model model) {
-      
-      System.out.println("---myPage---");
-      System.out.println("PathVariable : " + email);
-      
-      Member member = daoMember.selectById(email+".com");
-      Driver driver = daoMember.selectById2(email+".com");
-      
-      if (member == null) {
-         throw new MemberNotFoundException();
-      }
-      AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
-      session.setAttribute("authInfo", authInfo);
-      
-      model.addAttribute("member", member);
-      model.addAttribute("driver", driver);
-      
-      return "member/myPage";
-   }
-   
+	public String handleJoin(RegisterRequest rr, Errors errors, Model model, HttpSession session) {
+		System.out.println("handleJoin");
+		new RegisterRequestValidator().validate(rr, errors);
+		if (errors.hasErrors())
+			return "main";
+		try {
+			System.out.println("Controller " + rr.getEmail());
+			memberRegisterService.regist(rr);
+			model.addAttribute("memberName", rr.getName());
+			return "main";
+		} catch (AlreadyExistingMemberException ex) {
+			errors.rejectValue("email", "duplicate");
+			return "main";
+		}
+	}
+	@RequestMapping(value="/member/myPage/{email}", method = RequestMethod.GET)
+	public String myPage(@PathVariable String email, HttpSession session, Model model) {
+		
+		System.out.println("---myPage---");
+		System.out.println("PathVariable : " + email);
+		
+		Member member = authService.authenticate(email + ".com");
+		Driver driver = driverService.authenticate(email + ".com"); 
+		
+		if (member == null) {
+			throw new MemberNotFoundException();
+		}
+		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
+		session.setAttribute("authInfo", authInfo);
+		
+		model.addAttribute("member", member);
+		model.addAttribute("driver", driver);
+		
+		return "member/myPage";
+	}
+	
+	@RequestMapping(value="/member/myPage3/{email}", method = RequestMethod.GET)
+	public String myPage3(@PathVariable String email, HttpSession session, Model model) {
+		
+		System.out.println("---myPage3---");
+		System.out.println("PathVariable : " + email);
+		
+		Driver driver = driverService.authenticate(email + ".com"); 
+		
+		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
+		session.setAttribute("authInfo", authInfo);
+		
+		model.addAttribute("driver", driver);
+		
+		return "member/myPage3";
+	}
+	
 
-   @RequestMapping(value = "/member/changePassword", method = RequestMethod.GET)
-   public String form(@ModelAttribute("command") ChangePwdCommand pwdCmd) {
-      return "member/myPage";
-   }
+	@RequestMapping(value = "/member/changePassword", method = RequestMethod.GET)
+	public String form(@ModelAttribute("command") ChangePwdCommand pwdCmd) {
+		return "member/myPage";
+	}
 
-   @RequestMapping(value = "/member/changePassword", method = RequestMethod.POST)
-   public String submit(@ModelAttribute("command") ChangePwdCommand pwdCmd, Errors errors, HttpSession session) {
-      new ChangePwdCommandValidator().validate(pwdCmd, errors);
-      if (errors.hasErrors()) {
-         return "member/myPage";
-      }
-      AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
-      try {
-         changePasswordService.changePassword(authInfo.getEmail(), pwdCmd.getCurrentPassword(), pwdCmd.getNewPassword());
-         return "member/myPage";
-      } catch (IdPasswordNotMatchingException e) {
-         errors.rejectValue("currentPassword", "notMatching");
-         return "member/myPage";
-      }
-   }
+	@RequestMapping(value = "/member/changePassword", method = RequestMethod.POST)
+	public String submit(@ModelAttribute("command") ChangePwdCommand pwdCmd, Errors errors, HttpSession session) {
+		new ChangePwdCommandValidator().validate(pwdCmd, errors);
+		if (errors.hasErrors()) {
+			return "member/myPage";
+		}
+		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
+		try {
+			changePasswordService.changePassword(authInfo.getEmail(), pwdCmd.getCurrentPassword(), pwdCmd.getNewPassword());
+			return "member/myPage";
+		} catch (IdPasswordNotMatchingException e) {
+			errors.rejectValue("currentPassword", "notMatching");
+			return "member/myPage";
+		}
+	}
 
-   @ExceptionHandler(TypeMismatchException.class)
-   public String handleTypeMismatchException(TypeMismatchException ex) {
-      return "member/invalidId";
-   }
+	@ExceptionHandler(TypeMismatchException.class)
+	public String handleTypeMismatchException(TypeMismatchException ex) {
+		return "member/invalidId";
+	}
 
-   @ExceptionHandler(MemberNotFoundException.class)
-   public String handleNotFoundException() throws IOException {
-      return "member/noMember";
-   }
+	@ExceptionHandler(MemberNotFoundException.class)
+	public String handleNotFoundException() throws IOException {
+		return "member/noMember";
+	}
 }
 
