@@ -20,6 +20,7 @@ import exception.IdPasswordNotMatchingException;
 import exception.MemberNotFoundException;
 import login.AuthInfo;
 import login.AuthService;
+import login.DriverService;
 import member.ChangePasswordService;
 import member.ChangePwdCommand;
 import member.ChangePwdCommandValidator;
@@ -35,6 +36,11 @@ public class MemberController {
 	private MemberRegisterService memberRegisterService;
 	private ChangePasswordService changePasswordService;
 	private AuthService authService;
+	private DriverService driverService;
+
+	public void setDriverService(DriverService driverService) {
+		this.driverService = driverService;
+	}
 
 	public void setChangePasswordService(ChangePasswordService changePasswordService) {
 		this.changePasswordService = changePasswordService;
@@ -69,13 +75,13 @@ public class MemberController {
 		}
 	}
 	@RequestMapping(value="/member/myPage/{email}", method = RequestMethod.GET)
-	public String detai2(@PathVariable String email, HttpSession session, Model model) {
+	public String myPage(@PathVariable String email, HttpSession session, Model model) {
 		
 		System.out.println("---myPage---");
 		System.out.println("PathVariable : " + email);
 		
-		Member member = daoMember.selectById(email+".com");
-		Driver driver = daoMember.selectById2(email+".com");
+		Member member = authService.authenticate(email + ".com");
+		Driver driver = driverService.authenticate(email + ".com"); 
 		
 		if (member == null) {
 			throw new MemberNotFoundException();
@@ -87,6 +93,22 @@ public class MemberController {
 		model.addAttribute("driver", driver);
 		
 		return "member/myPage";
+	}
+	
+	@RequestMapping(value="/member/myPage3/{email}", method = RequestMethod.GET)
+	public String myPage3(@PathVariable String email, HttpSession session, Model model) {
+		
+		System.out.println("---myPage3---");
+		System.out.println("PathVariable : " + email);
+		
+		Driver driver = driverService.authenticate(email + ".com"); 
+		
+		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
+		session.setAttribute("authInfo", authInfo);
+		
+		model.addAttribute("driver", driver);
+		
+		return "member/myPage3";
 	}
 	
 

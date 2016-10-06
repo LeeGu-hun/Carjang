@@ -45,6 +45,10 @@
 		<property name="daoMember" ref="daoMember"/>
 	</bean>  
 	
+	<bean id="driverService" class="login.DriverService">
+		<property name="daoMember" ref="daoMember"/>
+	</bean>  
+	
 	<bean id="loginCommand" class="login.LoginCommand">
 	</bean>
 	

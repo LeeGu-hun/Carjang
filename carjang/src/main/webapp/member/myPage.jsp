@@ -12,7 +12,8 @@
 		<div id="left">
 			<div class="leftMenu" ><a href="#" style="text-decoration: none">내정보</a></div>
 			<div class="leftMenu" ><a href="#" style="text-decoration: none">예약 확인/결제</a></div>
-			<div class="leftMenu" ><a href="#" style="text-decoration: none">운전자 정보</a></div>
+			<div class="leftMenu" >
+				<a href="${pageContext.request.contextPath}/member/myPage3/${authInfo.email}" style="text-decoration: none">운전자 정보</a></div>
 		</div>
 		<div id="middle">></div>
 		<div id="right">
