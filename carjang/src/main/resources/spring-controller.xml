@@ -16,7 +16,8 @@
 		<property name="daoMember" ref="daoMember" />
 		<property name="authService" ref="authService" />
 		<property name="changePasswordService" ref="changePwdSvc" />
-		<property name="memberRegisterService" ref="memberRegSvc" /> 
+		<property name="memberRegisterService" ref="memberRegSvc" />
+		<property name="driverService" ref="driverService" /> 
 	</bean>
 
 </beans>

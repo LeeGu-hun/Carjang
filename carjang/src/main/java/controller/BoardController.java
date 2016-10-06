@@ -38,6 +38,7 @@ public class BoardController {
 	public String boardSearch(Model model, BoardSearch boardSearch) {
 
 		List boardList = boardListSvc.getBoardList(boardSearch);
+		
 		model.addAttribute("board_list", boardList);
 		model.addAttribute("page", "board");
 		return "main";

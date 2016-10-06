@@ -56,5 +56,8 @@
 		<constructor-arg ref="daoMember" /> 
 	</bean>
 
+	<bean id="driverService" class="model.DriverService">
+		<property name="daoMember" ref="daoMember"/>
+	</bean>  
 
 </beans>

@@ -72,11 +72,11 @@
 							<td width="200" align="center" valign="top">${data.board_price}</td>
 							<td width="200" align="center" valign="top">
 								<p class="star_rating">
-	  							    <a href="#" class="on">★</a>
-								    <a href="#" class="on">★</a>
-								    <a href="#" class="on">★</a>
-								    <a href="#">★</a>
-								    <a href="#">★</a>
+	  							    <a href="#" id="star_on" >★</a>
+								    <a href="#" id="star_on" >★</a>
+								    <a href="#" id="star_on" >★</a>
+								    <a href="#" id="star_on" >★</a>
+								    <a href="#" id="star_on" >★</a>
 								</p>
 							</td>
 						</tr>
