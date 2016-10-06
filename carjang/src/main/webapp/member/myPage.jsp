@@ -32,7 +32,7 @@
 			</div>
 			<div id="space"></div>
 			<div id="useBox">
-				<div class="chgHeader" id="useHeader">&nbsp;&nbsp;&nbsp;<label>${authInfo.name}님 탑승현황</label></div>
+				<div class="chgHeader" id="useHeader">&nbsp;&nbsp;&nbsp;<label>${member.mem_name}님 탑승현황</label></div>
 				<div id="useContent">
 					<table>
 						<tr>
@@ -49,9 +49,9 @@
 				</div>
 			</div>
 			
-			<c:if test="${! empty driverInfo }">
+			<c:if test="${! empty driver }">
 			<div id="useBox">
-				<div class="chgHeader" id="useHeader">&nbsp;&nbsp;&nbsp;<label>${authInfo.name}님 운전현황</label></div>
+				<div class="chgHeader" id="useHeader">&nbsp;&nbsp;&nbsp;<label>${member.mem_name}님 운전현황</label></div>
 				<div id="useContent2">
 					<table>
 						<tr>
@@ -60,7 +60,7 @@
 							<th width="200" align="center" valign="top" height="40">보유쿠폰</th>
 						</tr>
 						<tr>
-							<td width="200" align="center" valign="top" height="40">${driverInfo.drv_use}</td>
+							<td width="200" align="center" valign="top" height="40">${driver.drv_use}</td>
 							<td width="200" align="center" valign="top" height="40">${authInfo.mileage}</td>
 							<td width="200" align="center" valign="top" height="40">10월 10% 할인쿠폰<br>초특가 95% 할인쿠폰</td>
 						</tr>

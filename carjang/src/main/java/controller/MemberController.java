@@ -23,6 +23,7 @@ import login.AuthService;
 import member.ChangePasswordService;
 import member.ChangePwdCommand;
 import member.ChangePwdCommandValidator;
+import member.Driver;
 import member.Member;
 import member.MemberRegisterService;
 import member.RegisterRequest;
@@ -67,25 +68,25 @@ public class MemberController {
 			return "main";
 		}
 	}
-
-	@RequestMapping("/detail/{id}")
-	public String detail1(@PathVariable("id") String memId, Model model) {
-		Member member = daoMember.selectById1(memId);
+	@RequestMapping(value="/member/myPage/{email}", method = RequestMethod.GET)
+	public String detai2(@PathVariable String email, HttpSession session, Model model) {
+		
+		System.out.println("---myPage---");
+		System.out.println("PathVariable : " + email);
+		
+		Member member = daoMember.selectById(email+".com");
+		Driver driver = daoMember.selectById2(email+".com");
+		
 		if (member == null) {
 			throw new MemberNotFoundException();
 		}
+		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
+		session.setAttribute("authInfo", authInfo);
+		
 		model.addAttribute("member", member);
-		return "member/memberDetail";
-	}
-	
-	@RequestMapping(value="/member/myPage", method = RequestMethod.GET)
-	public String detai2() {
-		Member member = daoMember.selectById1(memId);
-		if (member == null) {
-			throw new MemberNotFoundException();
-		}
-		model.addAttribute("member", member);
-		return "member/memberDetail";
+		model.addAttribute("driver", driver);
+		
+		return "member/myPage";
 	}
 	
 
