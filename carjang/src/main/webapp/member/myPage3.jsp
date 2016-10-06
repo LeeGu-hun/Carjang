@@ -36,7 +36,7 @@
 					<span id="driverInfo">신상 정보</span>
 					<hr color="#dcdcdc" size="1">
 				</div>
-				<div id=searchFooter>
+				<div id=searchFooter> 
 					<input type="button" id="register">
 				</div>
 			</div>

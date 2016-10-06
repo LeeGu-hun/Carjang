@@ -50,7 +50,7 @@ public class MemberController {
 
 	public void setAuthService(AuthService authService) {
 		this.authService = authService;
-	}
+	} 
 
 	@RequestMapping(value = "/member/regist", method = RequestMethod.POST)
 	public String handleJoin(RegisterRequest rr, Errors errors, Model model, HttpSession session) {
