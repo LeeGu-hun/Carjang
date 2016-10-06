@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+			<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.0.185:1521:xe" />
+		<property name="user" value="db7" />
+		<property name="password" value="1234" />
+	</bean>
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="daoMember" class="dao.DaoMember">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<bean id="daoBoard" class="dao.DaoBoard">
+		<constructor-arg ref="dataSource" />
+	</bean>
+
+	<bean id="boardSearch" class="board.BoardSearch" />
+	<bean id="boardInsert" class="board.BoardInsert" />
+
+
+	<bean id="boardListSvc" class="model.BoardListService">
+		<constructor-arg ref="daoBoard" />
+	</bean>
+	
+	<bean id="boardRegisterSvc" class="model.BoardRegisterService">
+		<constructor-arg ref="daoBoard" />
+	</bean>
+
+	<bean id="authService" class="login.AuthService">
+		<property name="daoMember" ref="daoMember"/>
+	</bean>  
+	
+	<bean id="loginCommand" class="login.LoginCommand">
+	</bean>
+	
+	<bean id="changePwdSvc" class="member.ChangePasswordService">
+		<constructor-arg ref="daoMember" />
+	</bean>
+	
+	<bean id="memberRegSvc" class="member.MemberRegisterService">
+		<constructor-arg ref="daoMember" /> 
+	</bean>
+
+
+</beans>

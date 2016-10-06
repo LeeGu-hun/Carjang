@@ -1,0 +1,904 @@
+@CHARSET "UTF-8";
+/*초기화*/
+* {
+   padding: 0px;
+   margin: 0px;
+   font-family: NanumBarunGothic;
+   font-size: 14px;
+}
+
+html, body {
+   height: 100%;
+}
+
+/*header  */
+#headerBox {
+   /* background-color: orange; */
+   width: 100%;
+   height: 80px;
+   color: black;
+}
+
+#leftBox {
+   /* background-color: green; */
+   height: 80px;
+   width: 45%;
+   float: left;
+}
+
+#logoImg {
+    /* background-color: red; */
+   width: 20%;
+   height: 80px;
+   float: left;
+   text-align: right;
+}
+
+#logo {
+    /* background-color: skyblue; */
+   float: left;
+   width: 80%;
+   height: 80px;
+   text-align: left;
+   line-height: 70px;
+   font-size: 35px;
+   font-weight: bold;
+   color: #20b2aa;
+}
+
+#bar {
+   color: #ff6347;
+   font-size: 35px;
+   font-weight: bold;   
+}
+
+#rightBox {
+   /* background-color: red; */
+   height: 80px;
+   width: 55%;
+   float: left;
+}
+
+#menuBox {
+   /* background-color: blue; */
+   height: 80px;
+   float: left;
+    width: 100%;
+}
+
+.menu {
+   /* background-color: pink; */
+   float: right;
+   width: 130px;
+   height: 100%;
+   border-left: 1px solid #FF6347;
+   line-height: 70px;
+   text-align: center;
+}
+
+.menu:hover {
+   cursor: pointer;
+}
+
+/* page */
+.page {
+   height: 100%;
+   box-sizing: border-box;
+   position: relative;
+}
+#pageFirst {
+   z-index: 1;
+   text-align: center;
+}
+#sentence1 {
+   position: absolute;
+    top: 35%;
+   right: 13%;
+   font-weight: 100;
+   font-size: 50px;
+   color: white;
+}
+#sen1word {
+   font-weight: 100;
+   font-size: 50px;
+   color: #ff6347;
+}
+ 
+#sentence2 {
+   position: absolute;
+    top: 45%;
+   right: 15%;
+   font-weight: 100;
+   font-size: 40px;
+   color: white;
+}
+#sentence3 {
+   position: absolute;
+    top: 35%;
+   right: 13%;
+   font-weight: 100;
+   font-size: 50px;
+   color: white;
+}
+#sentence4 {
+   position: absolute;
+    top: 35%;
+   right: 13%;
+   font-weight: 100;
+   font-size: 50px;
+   color: white;
+}
+.sen4word {
+   font-weight: 100;
+   font-size: 50px;
+   color: #ff6347;
+}
+
+#button_wrap {
+   z-index: 1;
+   position: fixed;
+   right: 20px;
+   top: 50%;
+   margin-top: -46px;
+}
+
+.button {
+   width: 10px;
+   height: 10px;
+   border: 1px solid black;
+   border-radius: 6px;
+   cursor: pointer;
+   margin-bottom: 8px;
+}
+
+.on {
+   background-color: black;
+}
+
+/* modal */
+
+/*LoginModal */
+#loginModal {
+   display: none;
+   z-index: 2;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+   position: absolute;
+    top: 0;
+   left: 0;
+   /* float:right; */ 
+   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.login-modal-dialog {
+   width: 400px;
+   height: 350px;
+   /* background-color: navy; */
+   position: absolute;
+   top: 30%;
+   left: 40%;
+}
+
+.login-modal-body {
+   height: 280px;
+}
+
+.login-group {
+   height: 280px;
+   background-color: white;
+}
+
+.login-control {
+   width: 350px;
+   height: 60px;
+   border-radius: 3px;
+   font-size: 17px;
+}
+
+#inputUserId {
+   margin-top: 30px;
+   margin-bottom: 7px;
+   border: 1px solid #d3d3d3;
+}
+
+#inputPassword {
+   margin-bottom: 7px;
+   border: 1px solid #d3d3d3;
+}
+
+#checkId {
+   float: left;
+   margin-left: 25px;
+   font-size: 15px;
+}
+
+#lblSaveId {
+   color: #696969;
+}
+
+#btnLogin1 {
+   width: 350px;
+   height: 60px;
+   margin-top: 10px;
+   font-size: 17px;
+   border: 1px solid white;
+   background-color: #20b2aa;
+   color: white;
+}
+
+#btnLogin1:hover {
+   cursor: pointer;
+}
+
+#btnJoin1 {
+   width: 110px;
+   height: 35px;
+   font-size: 16px;
+   margin-top: 20px;
+   float: right;
+   margin-right: 25px;
+   border: 1px solid white;
+   background-color: #48d1cc;
+   color: white;
+}
+
+#btnJoin1:hover {
+   cursor: pointer;
+}
+
+.modal-footer {
+   height: 70px;
+   background-color: white;
+}
+
+/*joinModal */
+.join-modal-body {
+   height: 450px;
+}
+
+#joinModal {
+   display: none;
+   z-index: 3;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+    top: 0;
+   left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.join-modal-dialog {
+   width: 400px;
+   height: 380px;
+   /* background-color: navy; */
+   position: absolute;
+    top: 25%;
+   left: 40%;
+}
+
+.join-modal-body {
+   height: 380px;
+}
+
+.join-group {
+   height: 380px;
+   background-color: white;
+   margin-bottom: 7px;
+}
+
+.join-control {
+   width: 350px;
+   height: 35px;
+   border-radius: 3px;
+   font-size: 17px;
+   margin-bottom: 7px;
+   border: 1px solid #d3d3d3;
+}
+
+#joinUserName {
+   margin-top: 30px;
+}
+
+#confirmPassword {
+   margin-bottom: 20px;
+}
+
+#agree {
+   font-size: 15px;
+   margin-left: 25px;
+   float: left;
+   width: 350px;
+   text-align: left;
+   color: #696969;
+}
+
+#agree2 {
+   font-size: 15px;
+   color: #ff6347;
+}
+
+#btnJoin2 {
+   width: 350px;
+   height: 60px;
+   margin-top: 15px;
+   font-size: 17px;
+   border: 1px solid white;
+   background-color: #20b2aa;
+   color: white;
+}
+
+#btnJoin2:hover {
+   cursor: pointer;
+}
+
+#btnLogin2 {
+   width: 110px;
+   height: 35px;
+   font-size: 16px;
+   margin-top: 20px;
+   float: right;
+   margin-right: 25px;
+   border: 1px solid white;
+   background-color: #48d1cc;
+   color: white;
+}
+
+#btnLogin2:hover {
+   cursor: pointer;
+}
+
+#Q1, #Q2 {
+   float: left;
+   margin-left: 25px;
+   line-height: 70px;
+   color: #696969;
+}
+
+/* body Image */
+
+#redCar {
+   position: absolute;
+   top: 400px;
+   left: 300px;
+}
+
+/*footer */
+#footerBox {
+   padding-top: 30px;
+   background-color: #008b8b;
+   color: white;
+   height: 50px;
+   text-align: center;
+   width: 100%;
+   display: inline-block;
+}
+
+#footerBox span {
+   font-size: 14px;
+   line-height: 30px;
+ }
+ 
+/* /* myPage Left Menu List */ */
+#container{
+   width: 100%;
+   height:83.2%;
+}
+
+#left{
+   margin-top: 50px;
+   width: 30%;
+   /* background-color: red; */
+   float: left;
+}
+.leftMenu {
+   background-color: white;
+   width: 130px;
+   height: 80px;
+   border: 1px solid #20b2aa;
+   line-height: 70px;
+   text-align: center;
+   margin-left: 77%;
+   margin-bottom: 3px;
+/*    font-size: 20px;
+   color: white; */
+}
+.leftMenu:hover {
+   cursor: pointer;
+   background-color: #20b2aa;
+}
+
+#middle{
+   margin-top: 50px;
+   width: 3%;
+   /* background-color: yellow; */
+   float: left;
+   font-size: 30px;
+   font-weight: 50px;
+   color: #ff6347;
+   text-align: center;
+}
+#right{
+   margin-top: 50px;
+   width: 67%;
+   /* background-color: blue; */
+   float: left;
+} 
+
+/* /* myPage */ */
+
+/* 비밀번호 변경 */
+#pwBox{
+   width: 600px;
+   height: 280px;
+   /* background-color: orange; */
+   border: solid 1px #696969;
+}
+.chgHeader {
+   width: 100%;
+   height: 20%;
+   background-color: #DCDCDC;
+   font-size: 20px;
+   line-height: 50px;
+}
+#changedPwContent{
+   width: 100%;
+   height: 60%;
+   /* background-color: maroon; */
+}
+.lblPw{
+   margin-left: 50px;
+   margin-right: 5px;   
+}
+
+.password{
+   width: 250px;
+   height: 40px;
+}
+
+#pw1 {
+   margin-top: 14px;
+   margin-bottom: 5px;
+}
+
+#pw2 {
+   margin-left: 14px;
+   margin-bottom: 5px;
+}
+
+#changedPwFooter{
+   width: 100%;
+   height: 20%;
+   /* background-color: lime; */
+}
+
+#changedPwBtn{
+   float: right;
+   width: 130px;
+   height: 40px;
+   margin-top: 8px;
+   margin-right: 20px;
+   font-size: 13px;
+   border: 1px solid white;
+   background-color: #20b2aa;
+   color: white;
+}
+
+#changedPwBtn:hover {
+   cursor: pointer;
+}
+
+#space {
+   width: 600px;
+   height: 70px;
+}
+
+/* 이용현황 */
+#container{
+   width: 100%;
+   height:83.2%;
+}
+
+#useBox{
+   width: 600px;
+   height: 280px;
+   /* background-color: orange; */
+   border: solid 1px #696969;
+}
+
+#useContent{
+   width: 100%;
+   height: 80%;
+   /* background-color: maroon; */
+}
+
+/* /* myPage2 */ */
+
+/* 예약내역 */
+#container{
+   width: 100%;
+   height:83.2%;
+}
+
+#bookingBox{
+   width: 830px;
+   height: 280px;
+   /* background-color: orange; */
+   border: solid 1px #696969;
+}
+
+#bookingContent{
+   width: 100%;
+   height: 60%;
+   /* background-color: maroon; */
+}
+
+#btnBooking{
+   float: right;
+   width: 130px;
+   height: 40px;
+   margin-top: 8px;
+   margin-right: 20px;
+   font-size: 13px;
+   border: 1px solid #20b2aa;
+   background-color: #20b2aa;
+   color: white;
+}
+
+#btnBooking:hover {
+   cursor: pointer;
+}
+
+#space {
+   width: 600px;
+   height: 70px;
+}
+
+/* 결제내역 */
+#container{
+   width: 100%;
+   height:83.2%;
+}
+
+#paymentBox{
+   width: 830px;
+   height: 280px;
+   /* background-color: orange; */
+   border: solid 1px #696969;
+}
+
+#paymentContent{
+   width: 100%;
+   height: 80%;
+   /* background-color: maroon; */
+}
+
+#btnPay {
+   float: right;
+   width: 130px;
+   height: 40px;
+   margin-top: 8px;
+   margin-right: 20px;
+   font-size: 13px;
+   border: 1px solid #20b2aa;
+   background-color: #20b2aa;
+   color: white;
+}
+
+#btnPay:hover {
+   cursor: pointer;
+}
+
+/* /* myPage3 */ */
+
+/* 예약내역 */
+#container{
+   width: 100%;
+   height:83.2%;
+}
+
+#driverBox{
+   width: 830px;
+   height: 280px;
+   /* background-color: orange; */
+   border: solid 1px #696969;
+}
+
+#driverContent{
+   width: 100%;
+   height: 60%;
+   /* background-color: maroon; */
+}
+
+#btnBooking{
+   float: right;
+   width: 130px;
+   height: 40px;
+   margin-top: 8px;
+   margin-right: 20px;
+   font-size: 13px;
+   border: 1px solid #20b2aa;
+   background-color: #20b2aa;
+   color: white;
+}
+
+#btnBooking:hover {
+   cursor: pointer;
+} 
+
+
+/* /* webService */ */
+
+/* 실시간 검색 */
+.searchContainer{ 
+   width: 100%;
+   height:83.2%;
+}
+
+.searchBox {
+   width: 980px;
+   height: 140px;
+   margin: 0 auto;
+   /* background-color: blue; */
+   border: solid 1px #696969;   
+}
+
+.searchHeader {
+   width: 100%;
+   height: 40px;
+   background-color: #DCDCDC;
+}
+
+.srchTitle{
+   font-size: 20px;
+   line-height: 35px;
+}
+
+.btnSrch {
+   float: right;
+   margin-right: 10px;
+   margin-top: 5px;
+   width: 130px;
+   height: 30px;
+   font-size: 13px;
+   border: 1px solid #20b2aa;
+   background-color: #20b2aa;
+   color: white;
+}
+
+.btnSrch:hover {
+   cursor: pointer;
+}
+
+#searchContent {
+   width: 980px;
+   height: 80px;
+   /* background-color: green; */
+}
+#srchTable{
+   width: 100%;
+   height: 80px;
+   /* background-color: orange; */
+   padding-top: 15px;
+}
+
+.lblSrch {
+   margin-right: 10px; 
+}
+
+#srchDate {
+   margin-top: 3px;
+   margin-left: 52px;
+}
+
+#srchPrice{
+   margin-top: 3px;
+   margin-left: 65px;
+}
+
+#searchFooter{
+   width:  100%;
+   height: 20px;
+   /* background-color: aqua; */
+}
+
+/* 카장 검색 결과*/
+.searchContainer{ 
+   width: 100%;
+   height:83.2%;
+}
+
+#resultBox {
+   width: 980px;
+   height: 150px;
+   margin: 0 auto;
+   /* background-color: blue; */
+   border: solid 1px #696969;   
+}
+
+/* #searchHeader {
+   width: 100%;
+   height: 40px;
+   background-color: #DCDCDC;
+} */
+
+/* .srchTitle{
+   font-size: 20px;
+   line-height: 35px;
+} */
+
+.btnSrch {
+   float: right;
+   margin-right: 10px;
+   margin-top: 5px;
+   width: 130px;
+   height: 30px;
+   font-size: 13px;
+   border: 1px solid #20b2aa;
+   background-color: #20b2aa;
+   color: white;
+}
+
+.btnSrch:hover {
+   cursor: pointer;
+}
+
+#resultContent {
+   width: 980px;
+   height: 90px;
+   /* background-color: green; */
+}
+#resultTable{
+   width: 100%;
+   height: 90px;
+   /* background-color: orange; */
+   padding-top: 15px;
+}
+
+.lblSrch {
+   margin-right: 10px; 
+}
+
+#srchDate {
+   margin-top: 3px;
+   margin-left: 52px;
+}
+
+#srchPrice{
+   margin-top: 3px;
+   margin-left: 65px;
+}
+
+#searchFooter{
+   width:  100%;
+   height: 20px;
+   /* background-color: aqua; */
+}
+
+#detail{
+   float: right;
+   margin-right: 20px;
+   width: 40px;
+   height: 10px;
+   font-size: 8px;
+   color: #696969;
+   line-height: 17px;
+}
+
+/* 카장등록 */
+.searchContainer{
+   width: 100%;
+   height:83.2%;
+}
+
+#addBox {
+   width: 980px;
+   height: 210px;
+   margin: 0 auto;
+   /* background-color: blue; */
+   border: solid 1px #696969;   
+}
+
+/* #addHeader {
+   width: 100%;
+   height: 40px;
+   background-color: #DCDCDC;
+} */
+
+/* .srchTitle{
+   font-size: 20px;
+   line-height: 35px;
+} */
+
+.btnAdd {
+   float: right;
+   margin-right: 10px;
+   margin-top: 5px;
+   width: 130px;
+   height: 30px;
+   font-size: 13px;
+   border: 1px solid #20b2aa;
+   background-color: #20b2aa;
+   color: white;
+}
+
+.btnAdd:hover {
+   cursor: pointer;
+}
+
+#addContent {
+   width: 980px;
+   height: 150px;
+   /* background-color: green; */
+}
+#addTable{
+   width: 100%;
+   height: 150px;
+   /* background-color: orange; */
+   padding-top: 15px;
+}
+
+#lblAdd {
+   margin-left: 54px; 
+}
+
+.lblSrch {
+   margin-right: 10px; 
+}
+
+#addTime1 {
+   margin-right: 18px;
+}
+
+#addDate2 {
+   margin-top: 3px;
+   margin-left: 40px;
+}
+
+#addPrice{
+   margin-top: 3px;
+   margin-left: 65px;
+}
+
+#addFooter{
+   width:  100%;
+   height: 20px;
+   /* background-color: aqua; */
+}
+
+#lblEtc1{
+   margin-left: 27px;
+}
+
+#lblEtc2{
+   margin-left: 23px;
+}
+
+#lblEtc3{
+   margin-left: 84px;
+}
+
+#number {
+   margin-bottom: 3px;   
+}
+
+#lblEtc4{
+   margin-left: 84px;
+}
+
+.btnComment {
+   width: 40px;
+   height: 23px;
+   font-size: 12px;
+   border: 1px solid #20b2aa;
+   background-color: #20b2aa;
+   color: white;
+}
+
+.btnComment:hover {
+   cursor: pointer;
+}
+#detail{
+	height: auto;
+}
