@@ -142,7 +142,7 @@
 			<c:if test="${! empty authInfo }">
 				${authInfo.name}님환영합니다.
 				<div class=menu id=menuLogout><a href="${pageContext.request.contextPath}/logout" style="text-decoration: none">로그아웃</a></div>
-				<div class=menu id=menuPwChange><a href="${pageContext.request.contextPath}/member/myPage" style="text-decoration: none">마이페이지</a></div>
+				<div class=menu id=menuPwChange><a href="${pageContext.request.contextPath}/member/myPage/${authInfo.email}" style="text-decoration: none">마이페이지</a></div>
 				<div class=menu id=menu3>카장 이용하기</div>
 			</c:if>
 		</div>
