@@ -94,3 +94,17 @@ $(document).ready(
 
 
 
+		var header = document.getElementById('header'); //선택자 getElementByName,getElementByClassName,
+		var h1s = document.querySelectorAll('h1');        //태그 선택자만 가능 querySelector : id와 class도 가능!
+		for(var i =0; i<h1s.length; i++){
+		var h1 = h1s[i].style.color = 'blue';
+		
+		
+		h1.style.color = 'blue';
+		header.style.color = 'blue';
+		header.style.backgroundColor = 'orange';
+		header.innerHTML = '바뀌었지~~~~!';
+	
+}
+
+

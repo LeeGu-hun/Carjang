@@ -138,7 +138,6 @@ public class DaoMember {
 		비밀번호 수정
 	*/
 	public void update(Member member) {
-		
 		System.out.println("---MODIFY---");
 		System.out.println("NEW PASSWORD : " + member.getMem_password());
 		System.out.println("FIND EMAIL(ID) : " + member.getMem_email());

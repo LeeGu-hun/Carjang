@@ -67,10 +67,18 @@
 						</tr>
 						<tr>
 							<td width="200" align="center" valign="top">${data.board_loc}</td>
-							<td width="200" align="center" valign="top">차량<br>
+							<td width="200" align="center" valign="top">${data.board_car}<br>
 							</td>
 							<td width="200" align="center" valign="top">${data.board_price}</td>
-							<td width="200" align="center" valign="top"></td>
+							<td width="200" align="center" valign="top">
+								<p class="star_rating">
+	  							    <a href="#" class="on">★</a>
+								    <a href="#" class="on">★</a>
+								    <a href="#" class="on">★</a>
+								    <a href="#">★</a>
+								    <a href="#">★</a>
+								</p>
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -87,7 +95,7 @@
 							<td width="200" align="center" valign="top">코멘트</td>
 							<td width="200" align="center" valign="top">${data.board_comment}</td>
 						</tr>
-					</table>
+						</table>
 						<input type="submit" value="예약"/>
 						
 					</div>
@@ -152,7 +160,7 @@
 							<input type="checkbox" name="pickup_chk" value="1"><br>
 							<label id="lblEtc3" >희망인원</label> 
 							<select name="number" name="board_limit"  id="number">
-								<option value="1">1</option>
+								<option selected="true" value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
 								<option value="4">4</option>

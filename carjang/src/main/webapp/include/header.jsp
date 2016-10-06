@@ -48,6 +48,18 @@
 				var url = "<%=request.getContextPath()%>/board";    
 				$(location).attr('href',url);
 			});
+			
+			$('#detail').click(function() {
+			
+			});
+			
+			$( ".star_rating a" ).click(function() {
+			     $(this).parent().children("a").removeClass("on");
+			     $(this).addClass("on").prevAll("a").addClass("on");
+			     return false;
+			});
+			
+			
 		});
 </script>		
 <div id="headerBox">
