@@ -56,7 +56,7 @@ function AllSelect(){
                <label class="lblDrvier">보유차량</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			   <select name="carKinds" MULTIPLE id="carKinds" class="carnum" onsubmit="return settleFormCheck();">
 			   </select>
-			   <input type="hidden" name="drv_id" id="hidden"/>
+			   <input type="hidden" name="drv_id" id="hidden"/> 
                <input type="button" value="차량추가" id="btnCarAdd1"><br>
                <label class="lblDrvier" id="carNumLabel">차량번호</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                	<input type="text" class="frmDriver" id="carNum"/>
