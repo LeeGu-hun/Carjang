@@ -8,7 +8,7 @@
 }
 
 html, body {
-   height: 100%;
+   height: auto;
 }
 
 /*header  */
@@ -714,8 +714,8 @@ html, body {
    width: 980px;
    height: 150px;
    margin: 0 auto;
-   /* background-color: blue; */
    border: solid 1px #696969;   
+   margin-bottom: 100px;
 }
 
 /* #searchHeader {
@@ -755,6 +755,7 @@ html, body {
    height: 90px;
    /* background-color: orange; */
    padding-top: 15px;
+   
 }
 
 .lblSrch {
@@ -785,6 +786,7 @@ html, body {
    font-size: 8px;
    color: #696969;
    line-height: 17px;
+   cursor: pointer;
 }
 
 /* 카장등록 */
@@ -903,14 +905,32 @@ html, body {
 #detail{
 	height: auto;
 }
-.star_rating {font-size:0; letter-spacing:-4px;}
-.star_rating a {
-    font-size:22px;
-    letter-spacing:0;
-    display:inline-block;
-    margin-left:5px;
-    color:#ccc;
-    text-decoration:none;
+#starDiv{
+	margin-left:90px;
+	width:60px;
+	
 }
-.star_rating a:first-child {margin-left:0;}
-.star_rating a.on {color:#777;}
+#star_on1{
+	
+	position:relative;
+	float:left;
+	left:0%;
+	width:auto;
+	height : 12px;
+	
+	background-image: url(' ../images/star.gif');
+	background-position-x: 0px;
+    background-position-y: -12px;
+    background-size: auto;
+    background-repeat-x: repeat;
+    background-repeat-y: no-repeat;
+
+}
+
+#star_on2{
+	
+	width:100%;
+	height : 12px;
+	background-image: url(' ../images/star.gif');
+
+}

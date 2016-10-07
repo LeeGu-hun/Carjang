@@ -7,6 +7,7 @@
 	<bean class="controller.BoardController">
 	<property name="boardListService" ref="boardListSvc" />
 	<property name="boardRegisterService" ref="boardRegisterSvc" />
+	<property name="driverService" ref="driverService" /> 
 	</bean>
 	<bean class="controller.LoginController">
 		<property name="authService" ref="authService" />	

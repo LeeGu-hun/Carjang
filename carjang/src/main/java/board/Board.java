@@ -15,10 +15,11 @@ public class Board {
 	private String board_comment;
 	private Date board_regDate;
 	private String board_car;
+	private int board_drv_makr;
 
 	public Board(int board_num, String board_drvId, int board_price, Date board_date1, Date board_date2,
 			String board_loc, int board_limit, int board_pickup, String board_comment, Date board_regDate,
-			String board_car) {
+			String board_car, int board_drv_makr) {
 		super();
 		this.board_num = board_num;
 		this.board_drvId = board_drvId;
@@ -31,6 +32,7 @@ public class Board {
 		this.board_comment = board_comment;
 		this.board_regDate = board_regDate;
 		this.board_car = board_car;
+		this.board_drv_makr = board_drv_makr;
 	}
 
 	public int getBoard_num() {
@@ -119,6 +121,14 @@ public class Board {
 
 	public void setBoard_car(String board_car) {
 		this.board_car = board_car;
+	}
+
+	public int getBoard_drv_makr() {
+		return board_drv_makr;
+	}
+
+	public void setBoard_drv_makr(int board_drv_makr) {
+		this.board_drv_makr = board_drv_makr;
 	}
 
 }

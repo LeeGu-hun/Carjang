@@ -59,6 +59,8 @@
 
 				<div id="resultContent">
 					<table id="resultTable">
+					<input type="hidden" id="star_mark" value="${data.board_drv_makr}">
+					
 						<tr>
 							<td width="200" align="center" valign="top">지역</td>
 							<td width="200" align="center" valign="top">차량</td>
@@ -70,43 +72,46 @@
 							<td width="200" align="center" valign="top">${data.board_car}<br>
 							</td>
 							<td width="200" align="center" valign="top">${data.board_price}</td>
-							<td width="200" align="center" valign="top">
+							<td>
+							<div id="starDiv">
 								<p class="star_rating">
-	  							    <a href="#" id="star_on" >★</a>
-								    <a href="#" id="star_on" >★</a>
-								    <a href="#" id="star_on" >★</a>
-								    <a href="#" id="star_on" >★</a>
-								    <a href="#" id="star_on" >★</a>
+	  							    <div id="star_on1" style="width:${data.board_drv_makr}%"></div>
+	  							    <div id="star_on2" ></div>
 								</p>
+							</div>	
 							</td>
 						</tr>
 					</table>
 				</div>
 				<hr color="#dcdcdc" size="1">
 				<div id="searchFooter">
-					<div>
-						<a href="#" style="text-decoration: none" id="detail">자세히▼</a>
+						<span id="detail">자세히▼</span>
 						<table id="resultTable">
-						<tr>
+							<tr>
 							<td width="200" align="center" valign="top">픽업</td>
-							<td width="200" align="center" valign="top">${data.board_pickup}</td>
+							<td width="200" align="center" valign="top">
+							<input type="checkbox" name="pickup_chk" checked="
+							<c:if test="${data.board_pickup == '1'}">
+   								checked
+							</c:if>
+							" onclick="return false;"></td>
 							<td width="200" align="center" valign="top">희망인원</td>
 							<td width="200" align="center" valign="top">${data.board_limit}</td>
 							<td width="200" align="center" valign="top">코멘트</td>
 							<td width="200" align="center" valign="top">${data.board_comment}</td>
-						</tr>
-						</table>
-						<input type="submit" value="예약"/>
-						
-					</div>
+							<td><input type="submit" value="예약"/></td>
+							</tr>
+						</table>					
+					
 				</div>
 
 			</div>
 		</c:forEach>
 
 		<div id="space"></div>
-		<form action="board/register" method="POST" commandName="boardInsert">
+		
 		<div id="addBox">
+			<form action="board/register" method="POST" commandName="boardInsert">
 			<div class="searchHeader">
 				<div class="srchTitle" id="addTitle">
 					&nbsp;&nbsp;&nbsp;
@@ -159,8 +164,8 @@
 							<label id="lblEtc2">픽업</label>&nbsp;
 							<input type="checkbox" name="pickup_chk" value="1"><br>
 							<label id="lblEtc3" >희망인원</label> 
-							<select name="number" name="board_limit"  id="number">
-								<option selected="true" value="1">1</option>
+							<select name="board_limit"  id="number">
+								<option value="1">1</option>
 								<option value="2">2</option>
 								<option value="3">3</option>
 								<option value="4">4</option>

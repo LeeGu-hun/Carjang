@@ -3,10 +3,48 @@ SELECT * FROM USER_INDEXES;
 SELECT * FROM RENTIT;
 select * from DRIVER;
 select * from car;
+
+update DRIVER set DRV_MARK = 53 where DRV_ID = 'd@d.com';
 insert into CAR values('fdsa3','a@a.com','링컨');
 select board_seq.nextval from dual;
 DELETE from RENTIT;
 to_date('09-09-2013 12:14:11','mm-dd-yyyy hh24:mi:ss')); 
+
+select BOARD_NUM,BOARD_DRV_ID,BOARD_PRICE,BOARD_DATE_1,BOARD_DATE_2 
+	   BOARD_LOC,BOARD_LIMIT,BOARD_PICK_CHK,BOARD_COMENT,BOARD_REG_DATE,BOARD_CAR,DRV_MARK 
+from   RENTIT join DRIVER on RENTIT.BOARD_DRV_ID = DRIVER.DRV_ID 
+where  
+	   BOARD_LOC = ? AND BOARD_DATE_1 >= ?  
+AND    BOARD_DATE_2 <= ? AND BOARD_PRICE BETWEEN ? AND ? 
+
+select BOARD_NUM,BOARD_DRV_ID,BOARD_PRICE,BOARD_DATE_1,BOARD_DATE_2
+	   BOARD_LOC,BOARD_LIMIT,BOARD_PICK_CHK,BOARD_COMENT,BOARD_REG_DATE,BOARD_CAR,DRV_MARK
+from   RENTIT join DRIVER on RENTIT.BOARD_DRV_ID = DRIVER.DRV_ID 
+where
+	   BOARD_LOC = '광주' AND BOARD_DATE_1 >= to_date('2016-10-06 06:00','yyyy-mm-dd hh24:mi')
+AND    BOARD_DATE_2 <= to_date('2016-10-10 17:00','yyyy-mm-dd hh24:mi') AND BOARD_PRICE BETWEEN 1000 AND 68000;
+				
+
+select
+				 BOARD_NUM,BOARD_DRV_ID,BOARD_PRICE,BOARD_DATE_1,BOARD_DATE_2
+				 BOARD_LOC,BOARD_LIMIT,BOARD_PICK_CHK,BOARD_COMENT,BOARD_REG_DATE,BOARD_CAR,DRV_MARK
+				 from RENTIT join DRIVER on RENTIT.BOARD_DRV_ID = DRIVER.DRV_ID 
+				 where  BOARD_LOC = ? AND BOARD_DATE_1 >= ?  AND BOARD_DATE_2 <= ? AND BOARD_PRICE BETWEEN ? AND ? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 insert into RENTIT values (21,'a@a.com',6000,to_date('2016-10-09 12:00','yyyy-mm-dd hh24:mi'),to_date('2016-10-10 12:00','yyyy-mm-dd hh24:mi'),
 '광주',3,1,'ㄹㅇㄴㅁㄹㄴㄹㅇㄴ',sysdate,'fdsa3');

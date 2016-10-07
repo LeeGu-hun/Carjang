@@ -94,17 +94,15 @@ $(document).ready(
 
 
 
-		var header = document.getElementById('star_on'); //선택자 getElementByName,getElementByClassName,
-		var h1s = document.querySelectorAll('h1');        //태그 선택자만 가능 querySelector : id와 class도 가능!
-		for(var i =0; i<h1s.length; i++){
-		var h1 = h1s[i].style.color = 'blue';
-		
-		
-		h1.style.color = 'blue';
-		header.style.color = 'blue';
-		header.style.backgroundColor = 'orange';
-		header.innerHTML = '바뀌었지~~~~!';
+function drivScore(score) {  
+	var marks = document.querySelectorAll('#star_on'); //배열
+	var score = document.getElementById('#drv_score'); //선택자 getElementByName,getElementByClassName,
+
+	for(var i =1; i<=score; i++){
+	var mark = marks[i].style.color = 'yellow';
+	}
 	
 }
+
 
 

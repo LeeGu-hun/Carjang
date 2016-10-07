@@ -40,7 +40,14 @@
 				else {
 					$('#regBtn').attr('value', '등록취소');
 					$('#regBtn').css('background', 'red');
+					$('html, body').scrollTop( $(document).height() );
+					
+					for(var i=0; i<5; i++){
+						$('<option value="'+ i +'">' + i + '</option>').appendTo('#콤보객체ID');
+					}
+					
 					$a = $a * -1
+					
 				}
 			});
 
@@ -49,15 +56,15 @@
 				$(location).attr('href',url);
 			});
 			
+			
 			$('#detail').click(function() {
-			
+		
 			});
 			
-			$( ".star_rating a" ).click(function() {
-			     $(this).parent().children("a").removeClass("on");
-			     $(this).addClass("on").prevAll("a").addClass("on");
-			     return false;
-			});
+			
+	
+			
+			
 			
 			
 		});
