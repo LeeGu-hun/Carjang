@@ -442,5 +442,40 @@ ALTER TABLE CUST_CODE
 			CUST_ID
 		)ON DELETE CASCADE;
 
-		
-		
+SELECT * FROM MEMBER;
+DELETE FROM MEMBER WHERE MEM_ID = 'minji@minji.com';
+
+SELECT * FROM DRIVER;
+INSERT INTO DRIVER VALUES('b@b.com', 3224, 01012459595, 3, 'x', 1, 1234, '토마토저축은행');
+INSERT INTO DRIVER VALUES('c@c.com', 6214, 01045429595, 3, 'o', 2, 4241, '신한은행');
+INSERT INTO DRIVER VALUES('d@d.com', 7222, 01023422315, 3, 'x', 3, 5435, '국민은행');
+INSERT INTO DRIVER VALUES('e@e.com', 9833, 01024427675, 3, 'x', 4, 6574, '외환은행');
+INSERT INTO DRIVER VALUES('f@f.com', 4654, 01025642687, 3, 'o', 5, 1984, '두자은행');
+INSERT INTO DRIVER VALUES('g@g.com', 2299, 01045624295, 3, 'x', 4, 1239, '세자은행');
+INSERT INTO DRIVER VALUES('u@u.com', 1677, 01034424567, 3, 'o', 1, 2254, '네자은행');
+DELETE FROM DRIVER WHERE DRV_ID = 'd@d.com';
+
+SELECT * FROM RENTIT;
+INSERT INTO DRIVER VALUES(1, 'b@b.com', 3224, sysdate, sysdate+3, '서울', 0, 1, '잘부탁드려요', 'sysdate', '페라리');
+INSERT INTO DRIVER VALUES(2, 'c@c.com', 6214, 01045429595, 3, 'o', 2, 4241, '신한은행');
+INSERT INTO DRIVER VALUES(3, 'd@d.com', 7222, 01023422315, 3, 'x', 3, 5435, '국민은행');
+INSERT INTO DRIVER VALUES(4, 'e@e.com', 9833, 01024427675, 3, 'x', 4, 6574, '외환은행');
+INSERT INTO DRIVER VALUES(5, 'f@f.com', 4654, 01025642687, 3, 'o', 5, 1984, '두자은행');
+INSERT INTO DRIVER VALUES(6, 'g@g.com', 2299, 01045624295, 3, 'x', 4, 1239, '세자은행');
+INSERT INTO DRIVER VALUES(7, 'u@u.com', 1677, 01034424567, 3, 'o', 1, 2254, '네자은행');
+DELETE FROM RENTIT WHERE DRV_ID = 'a@a.com';
+
+SELECT * FROM CAR; 
+SELECT * FROM CAR WHERE CAR_DRV_ID = 'd@d.com';
+INSERT INTO CAR VALUES('12가8422', 'b@b.com', '페라리');
+INSERT INTO CAR VALUES('18가8282', 'd@d.com', '롤스로이스');
+INSERT INTO CAR VALUES('24가1952', 'd@d.com', '부가티');
+INSERT INTO CAR VALUES('33나1952', 'c@c.com', '부가티');
+INSERT INTO CAR VALUES('55라1952', 'e@e.com', '5t트럭');
+INSERT INTO CAR VALUES('11가1952', 'e@e.com', '대형버스');
+INSERT INTO CAR VALUES('09나1952', 'f@f.com', '아반토르');
+INSERT INTO CAR VALUES('23다1952', 'g@g.com', '루카쿠');
+INSERT INTO CAR VALUES('66라8952', 'g@g.com', '머스탱');
+INSERT INTO CAR VALUES('45마1952', 'u@u.com', '람보르기니');
+INSERT INTO CAR VALUES('13바1952', 'u@u.com', '벤츠');
+DELETE FROM CAR WHERE CAR_KIND = '부가티';

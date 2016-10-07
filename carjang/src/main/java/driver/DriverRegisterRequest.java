@@ -1,15 +1,11 @@
 package driver;
 
-public class Driver {
-	
+public class DriverRegisterRequest {
 	private String drv_id, drv_bank;
 	private int drv_lisc, drv_phone, drv_mark, drv_use, drv_account;
-
-	public Driver(String str){
-		super();
-		this.drv_id = str;
-	}
-	public Driver(String drv_id, int drv_lisc, int drv_phone, int drv_mark, int drv_use, String drv_bank, int drv_account) {
+	
+	public DriverRegisterRequest(String drv_id, String drv_bank, int drv_lisc, int drv_phone, int drv_mark, int drv_use,
+			int drv_account) {
 		super();
 		this.drv_id = drv_id;
 		this.drv_bank = drv_bank;
@@ -17,16 +13,6 @@ public class Driver {
 		this.drv_phone = drv_phone;
 		this.drv_mark = drv_mark;
 		this.drv_use = drv_use;
-		this.drv_account = drv_account;
-	}
-	
-	public Driver(String drv_id, int drv_lisc, int drv_phone, int drv_mark, String drv_bank, int drv_account) {
-		super();
-		this.drv_id = drv_id;
-		this.drv_bank = drv_bank;
-		this.drv_lisc = drv_lisc;
-		this.drv_phone = drv_phone;
-		this.drv_mark = drv_mark;
 		this.drv_account = drv_account;
 	}
 

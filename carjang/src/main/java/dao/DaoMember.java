@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -13,7 +12,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 
-import member.Driver;
+import driver.Driver;
+import member.Car;
 import member.Member;
 
 public class DaoMember {
@@ -41,26 +41,21 @@ public class DaoMember {
 		}, memId);
 		return results.isEmpty() ? null : results.get(0);
 	}
-	
 	/*
-	 	운전자 디테일 검색
+	 * 차 검색
 	 */
-	public Driver selectById2(String memId) {
-		List<Driver> results = jdbcTemplate.query(
-				"SELECT * FROM DRIVER WHERE DRV_ID = ?", new RowMapper<Driver>() {
-			public Driver mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Driver driver = new Driver(
-						rs.getString("DRV_ID"), 
-						rs.getInt("DRV_LISC"), 
-						rs.getInt("DRV_PHONE"),
-						rs.getInt("DRV_MARK"), 
-						rs.getInt("DRV_USE"), 
-						rs.getString("DRV_BANK"),
-						rs.getInt("DRV_ACCOUNT"));
-				return driver;
+	public List<Car> selectById3(String memId) {
+		List<Car> results = jdbcTemplate.query(
+				"SELECT * FROM CAR WHERE CAR_DRV_ID = ?", new RowMapper<Car>() {
+			public Car mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Car car = new Car(
+						rs.getString("CAR_NUM"), 
+						rs.getString("CAR_DRV_ID"), 
+						rs.getString("CAR_KIND"));
+				return car;
 			}
 		}, memId);
-		return results.isEmpty() ? null : results.get(0);
+		return results.isEmpty() ? null : results;
 	}
 	/*
 	public List<Member> selectByRegdate(Date from, Date to) {

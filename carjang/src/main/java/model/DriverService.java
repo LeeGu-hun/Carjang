@@ -2,24 +2,22 @@ package model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import dao.DaoMember;
-import exception.IdPasswordNotMatchingException;
+import dao.DaoDriver;
+import driver.Driver;
 import exception.MemberNotFoundException;
-import member.Driver;
-import member.Member;
 
 public class DriverService {
-	private DaoMember daoMember;
-
+	private DaoDriver daoDriver;
+	
 	@Autowired
-	public void setDaoMember(DaoMember daoMember) {
-		this.daoMember = daoMember;
-	}	
+	public void setDaoDriver(DaoDriver daoDriver) {
+		this.daoDriver = daoDriver;
+	}
 	
 	public Driver authenticate(String email) {
-		Driver driver = daoMember.selectById2(email);
+		Driver driver = daoDriver.selectById(email);
 		if (driver == null) {
-			throw new MemberNotFoundException();
+			return new Driver("notDriver");
 		}
 		return new Driver(
 				driver.getDrv_id(),

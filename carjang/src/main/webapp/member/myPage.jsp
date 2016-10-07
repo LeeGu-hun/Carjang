@@ -13,7 +13,14 @@
 			<div class="leftMenu" ><a href="#" style="text-decoration: none">내정보</a></div>
 			<div class="leftMenu" ><a href="#" style="text-decoration: none">예약 확인/결제</a></div>
 			<div class="leftMenu" >
-				<a href="${pageContext.request.contextPath}/member/myPage3/${authInfo.email}" style="text-decoration: none">운전자 정보</a></div>
+				<c:choose>
+ 					<c:when test="${ driver != 'notDriver'}">
+ 						<a href="${pageContext.request.contextPath}/member/myPage4/${authInfo.email}" style="text-decoration: none">운전자 정보</a></div>
+ 					</c:when>
+ 					<c:otherwise>
+ 						<a href="${pageContext.request.contextPath}/member/myPage3.jsp" style="text-decoration: none">운전자 정보</a></div>
+ 					</c:otherwise>
+				</c:choose>
 		</div>
 		<div id="middle">></div>
 		<div id="right">
@@ -49,8 +56,7 @@
 					</table>
 				</div>
 			</div>
-			
-			<c:if test="${! empty driver }">
+			<c:if test="${ driver != 'notDriver'}">
 			<div id="useBox">
 				<div class="chgHeader" id="useHeader">&nbsp;&nbsp;&nbsp;<label>${member.mem_name}님 운전현황</label></div>
 				<div id="useContent2">

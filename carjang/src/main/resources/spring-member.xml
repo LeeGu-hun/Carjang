@@ -24,7 +24,11 @@
 	<bean id="daoMember" class="dao.DaoMember">
 		<constructor-arg ref="dataSource" />
 	</bean>
-
+	
+	<bean id="daoDriver" class="dao.DaoDriver">
+		<constructor-arg ref="dataSource" />
+	</bean>
+	
 	<bean id="daoBoard" class="dao.DaoBoard">
 		<constructor-arg ref="dataSource" />
 	</bean>
@@ -45,8 +49,7 @@
 		<property name="daoMember" ref="daoMember"/>
 	</bean>  
 	
-	<bean id="loginCommand" class="login.LoginCommand">
-	</bean>
+	<bean id="loginCommand" class="login.LoginCommand"/>
 	
 	<bean id="changePwdSvc" class="member.ChangePasswordService">
 		<constructor-arg ref="daoMember" />
@@ -55,8 +58,16 @@
 	<bean id="memberRegSvc" class="member.MemberRegisterService">
 		<constructor-arg ref="daoMember" /> 
 	</bean>
+	
+	<bean id="driverRegSvc" class="driver.DriverRegisterService">
+		<constructor-arg ref="daoDriver" /> 
+	</bean>
 
 	<bean id="driverService" class="model.DriverService">
+		<property name="daoDriver" ref="daoDriver"/>
+	</bean>  
+	
+	<bean id="carService" class="model.CarService">
 		<property name="daoMember" ref="daoMember"/>
 	</bean>  
 
