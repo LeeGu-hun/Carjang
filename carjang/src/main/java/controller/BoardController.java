@@ -59,6 +59,7 @@ public class BoardController {
 	public String boardRegister(@RequestParam(value = "pickup_chk", defaultValue = "0") int pickup,
 				Model model,BoardInsert boardInsert,HttpSession session) {
 
+		
 		AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
 		boardInsert.setBoard_drvId(authInfo.getEmail());
 		boardInsert.setBoard_pickup(pickup);

@@ -6,28 +6,26 @@
    font-family: NanumBarunGothic;
    font-size: 14px;
 }
-
 html, body {
+   
    height: auto;
+   min-height: 100%;
 }
 
-/*header  */
+/* //header//  */
 #headerBox {
-   /* background-color: orange; */
    width: 100%;
    height: 80px;
    color: black;
 }
 
 #leftBox {
-   /* background-color: green; */
    height: 80px;
    width: 45%;
    float: left;
 }
 
 #logoImg {
-    /* background-color: red; */
    width: 20%;
    height: 80px;
    float: left;
@@ -35,7 +33,6 @@ html, body {
 }
 
 #logo {
-    /* background-color: skyblue; */
    float: left;
    width: 80%;
    height: 80px;
@@ -53,21 +50,18 @@ html, body {
 }
 
 #rightBox {
-   /* background-color: red; */
    height: 80px;
    width: 55%;
    float: left;
 }
 
 #menuBox {
-   /* background-color: blue; */
    height: 80px;
    float: left;
     width: 100%;
 }
 
 .menu {
-   /* background-color: pink; */
    float: right;
    width: 130px;
    height: 100%;
@@ -80,7 +74,7 @@ html, body {
    cursor: pointer;
 }
 
-/* page */
+/* //main// */
 .page {
    height: 100%;
    box-sizing: border-box;
@@ -155,7 +149,7 @@ html, body {
    background-color: black;
 }
 
-/* modal */
+/* //modal// */
 
 /*LoginModal */
 #loginModal {
@@ -272,9 +266,8 @@ html, body {
 .join-modal-dialog {
    width: 400px;
    height: 380px;
-   /* background-color: navy; */
    position: absolute;
-    top: 25%;
+   top: 25%;
    left: 40%;
 }
 
@@ -364,7 +357,7 @@ html, body {
    left: 300px;
 }
 
-/*footer */
+/* //footer// */
 #footerBox {
    padding-top: 30px;
    background-color: #008b8b;
@@ -377,19 +370,18 @@ html, body {
 
 #footerBox span {
    font-size: 14px;
-   line-height: 30px;
+   line-height: 25px;
  }
  
-/* /* myPage Left Menu List */ */
-#container{
-   width: 100%;
-   height:83.2%;
+/* //myPage Left Menu List// */
+.container{
+   height:auto;
 }
 
 #left{
    margin-top: 50px;
    width: 30%;
-   /* background-color: red; */
+   height: 100%;
    float: left;
 }
 .leftMenu {
@@ -401,18 +393,16 @@ html, body {
    text-align: center;
    margin-left: 77%;
    margin-bottom: 3px;
-/*    font-size: 20px;
-   color: white; */
+   cursor: pointer;
 }
 .leftMenu:hover {
-   cursor: pointer;
    background-color: #20b2aa;
 }
 
 #middle{
    margin-top: 50px;
    width: 3%;
-   /* background-color: yellow; */
+   height: 100%;
    float: left;
    font-size: 30px;
    font-weight: 50px;
@@ -422,20 +412,24 @@ html, body {
 #right{
    margin-top: 50px;
    width: 67%;
-   /* background-color: blue; */
+   height: 100%;
    float: left;
-} 
+}
 
-/* /* myPage */ */
+/* //myPage// */
 
 /* 비밀번호 변경 */
+.container{
+   width: 100%;
+   height:83.2%;
+}
+
 #pwBox{
    width: 600px;
    height: 280px;
-   /* background-color: orange; */
    border: solid 1px #696969;
 }
-.chgHeader {
+.myPageHeader {
    width: 100%;
    height: 20%;
    background-color: #DCDCDC;
@@ -445,7 +439,6 @@ html, body {
 #changedPwContent{
    width: 100%;
    height: 60%;
-   /* background-color: maroon; */
 }
 .lblPw{
    margin-left: 50px;
@@ -467,10 +460,9 @@ html, body {
    margin-bottom: 5px;
 }
 
-#changedPwFooter{
+.myPageFooter{
    width: 100%;
    height: 20%;
-   /* background-color: lime; */
 }
 
 #changedPwBtn{
@@ -483,9 +475,6 @@ html, body {
    border: 1px solid white;
    background-color: #20b2aa;
    color: white;
-}
-
-#changedPwBtn:hover {
    cursor: pointer;
 }
 
@@ -495,43 +484,39 @@ html, body {
 }
 
 /* 이용현황 */
-#container{
+/* #container{
    width: 100%;
    height:83.2%;
-}
+} */
 
 #useBox{
    width: 600px;
    height: 280px;
-   /* background-color: orange; */
    border: solid 1px #696969;
 }
 
 #useContent{
    width: 100%;
    height: 80%;
-   /* background-color: maroon; */
 }
 
-/* /* myPage2 */ */
+/* //myPage2// */
 
 /* 예약내역 */
-#container{
+/* #container{
    width: 100%;
    height:83.2%;
-}
+} */
 
-#bookingBox{
+.myPage2Box{
    width: 830px;
    height: 280px;
-   /* background-color: orange; */
    border: solid 1px #696969;
 }
 
 #bookingContent{
    width: 100%;
    height: 60%;
-   /* background-color: maroon; */
 }
 
 #btnBooking{
@@ -544,9 +529,6 @@ html, body {
    border: 1px solid #20b2aa;
    background-color: #20b2aa;
    color: white;
-}
-
-#btnBooking:hover {
    cursor: pointer;
 }
 
@@ -556,22 +538,14 @@ html, body {
 }
 
 /* 결제내역 */
-#container{
+/* #container{
    width: 100%;
    height:83.2%;
 }
-
-#paymentBox{
-   width: 830px;
-   height: 280px;
-   /* background-color: orange; */
-   border: solid 1px #696969;
-}
-
+ */
 #paymentContent{
    width: 100%;
    height: 80%;
-   /* background-color: maroon; */
 }
 
 #btnPay {
@@ -584,34 +558,112 @@ html, body {
    border: 1px solid #20b2aa;
    background-color: #20b2aa;
    color: white;
-}
-
-#btnPay:hover {
    cursor: pointer;
 }
 
-/* /* myPage3 */ */
 
-/* 예약내역 */
-#container{
+/* //myPage3// */
+
+/* 운전자 정보 */
+/* #container{
    width: 100%;
    height:83.2%;
+} */
+.myPage3Header {
+   width: 100%;
+   height: 13%;
+   background-color: #DCDCDC;
+   font-size: 20px;
+   line-height: 50px;
 }
 
-#driverBox{
+.driverBox{
    width: 830px;
-   height: 280px;
-   /* background-color: orange; */
+   height: 450px;
    border: solid 1px #696969;
 }
 
-#driverContent{
+.driverContent{
    width: 100%;
-   height: 60%;
-   /* background-color: maroon; */
+   height: 74%;
 }
 
-#btnBooking{
+.info{
+   font-size: 17px;
+   font-weight: bold;
+   margin-left: 15px;
+}
+
+.lblDrvier{
+   font-size: 15px;
+   margin-left: 25px;
+   margin-right: 7px;   
+}
+
+.frmDriver{
+   width: 250px;
+   height: 25px;
+   margin-top: 10px;
+}
+
+#btnLicense{
+   width: 60px;
+   height: 20px;
+   margin-top: 8px;
+   margin-right: 20px;
+   line-height: 10px;
+   font-size: 13px;
+   border: 1px solid #20b2aa;
+   background-color: #20b2aa;
+   color: white;
+   cursor: pointer;
+}
+
+#btnCarAdd1{
+   width: 60px;
+   height: 20px;
+   margin-top: 8px;
+   margin-right: 20px;
+   line-height: 10px;
+   font-size: 13px;
+   border: 1px solid #20b2aa;
+   background-color: #20b2aa;
+   color: white;
+   cursor: pointer;
+}
+
+#btnCarAdd2 {
+   width: 35px;
+   height: 20px;
+   margin-top: 8px;
+   margin-right: 20px;
+   line-height: 10px;
+   font-size: 13px;
+   border: 1px solid #20b2aa;
+   background-color: #20b2aa;
+   color: white;   
+   cursor: pointer;
+}
+
+#line {
+   width: 830px;
+   height: 40px;
+}
+
+#btnAccount {
+   width: 60px;
+   height: 20px;
+   margin-top: 8px;
+   margin-right: 20px;
+   line-height: 10px;
+   font-size: 13px;
+   border: 1px solid #20b2aa;
+   background-color: #20b2aa;
+   color: white;   
+   cursor: pointer;
+}
+
+#btnRegister{
    float: right;
    width: 130px;
    height: 40px;
@@ -620,27 +672,50 @@ html, body {
    font-size: 13px;
    border: 1px solid #20b2aa;
    background-color: #20b2aa;
-   color: white;
+   color: white;   
+   cursor: pointer;
 }
 
-#btnBooking:hover {
-   cursor: pointer;
-} 
+#myPage3Footer{
+   width: 100%;
+   height: 13%;
+}
 
 
-/* /* webService */ */
+/* //myPage4// */
+
+/* 운전자 정보 */
+/* #container{
+   height: auto;
+} */
+
+#dealInfo{
+   font-size: 17px;
+   font-weight: bold;
+   margin-left: 15px;
+   margin-top: 3px;
+}
+
+/* 카장 등록현황 */
+
+#registerStateContent{
+   width: 830px;
+   height: 250px;
+}
+
+
+/* //webService// */
 
 /* 실시간 검색 */
-.searchContainer{ 
+/* .searchContainer{ 
    width: 100%;
    height:83.2%;
-}
+} */
 
 .searchBox {
    width: 980px;
    height: 140px;
    margin: 0 auto;
-   /* background-color: blue; */
    border: solid 1px #696969;   
 }
 
@@ -665,21 +740,16 @@ html, body {
    border: 1px solid #20b2aa;
    background-color: #20b2aa;
    color: white;
-}
-
-.btnSrch:hover {
    cursor: pointer;
 }
 
 #searchContent {
    width: 980px;
    height: 80px;
-   /* background-color: green; */
 }
 #srchTable{
    width: 100%;
    height: 80px;
-   /* background-color: orange; */
    padding-top: 15px;
 }
 
@@ -700,34 +770,20 @@ html, body {
 #searchFooter{
    width:  100%;
    height: 20px;
-   /* background-color: aqua; */
 }
-
 
 /* 카장 검색 결과*/
-.searchContainer{ 
+/* .searchContainer{ 
    width: 100%;
    height:83.2%;
-}
+} */
 
 #resultBox {
    width: 980px;
    height: 150px;
    margin: 0 auto;
    border: solid 1px #696969;   
-   margin-bottom: 100px;
 }
-
-/* #searchHeader {
-   width: 100%;
-   height: 40px;
-   background-color: #DCDCDC;
-} */
-
-/* .srchTitle{
-   font-size: 20px;
-   line-height: 35px;
-} */
 
 .btnSrch {
    float: right;
@@ -739,23 +795,17 @@ html, body {
    border: 1px solid #20b2aa;
    background-color: #20b2aa;
    color: white;
-}
-
-.btnSrch:hover {
    cursor: pointer;
 }
 
 #resultContent {
    width: 980px;
    height: 90px;
-   /* background-color: green; */
 }
 #resultTable{
    width: 100%;
    height: 90px;
-   /* background-color: orange; */
    padding-top: 15px;
-   
 }
 
 .lblSrch {
@@ -775,7 +825,6 @@ html, body {
 #searchFooter{
    width:  100%;
    height: 20px;
-   /* background-color: aqua; */
 }
 
 #detail{
@@ -785,35 +834,28 @@ html, body {
    height: 10px;
    font-size: 8px;
    color: #696969;
-   line-height: 17px;
+   line-height: 17px; 
    cursor: pointer;
 }
 
 /* 카장등록 */
-.searchContainer{
+/* .searchContainer{
    width: 100%;
    height:83.2%;
-}
+} */
 
 #addBox {
    width: 980px;
    height: 210px;
    margin: 0 auto;
-   /* background-color: blue; */
    border: solid 1px #696969;   
 }
-
-/* #addHeader {
-   width: 100%;
-   height: 40px;
-   background-color: #DCDCDC;
-} */
-
-/* .srchTitle{
-   font-size: 20px;
-   line-height: 35px;
-} */
-
+#addDiv {
+	width:auto;
+	height:auto;
+	border: solid 0px #696969;
+	background: red;
+}
 .btnAdd {
    float: right;
    margin-right: 10px;
@@ -824,21 +866,16 @@ html, body {
    border: 1px solid #20b2aa;
    background-color: #20b2aa;
    color: white;
-}
-
-.btnAdd:hover {
    cursor: pointer;
 }
 
 #addContent {
    width: 980px;
    height: 150px;
-   /* background-color: green; */
 }
 #addTable{
    width: 100%;
    height: 150px;
-   /* background-color: orange; */
    padding-top: 15px;
 }
 
@@ -867,7 +904,6 @@ html, body {
 #addFooter{
    width:  100%;
    height: 20px;
-   /* background-color: aqua; */
 }
 
 #lblEtc1{
@@ -897,11 +933,9 @@ html, body {
    border: 1px solid #20b2aa;
    background-color: #20b2aa;
    color: white;
-}
-
-.btnComment:hover {
    cursor: pointer;
 }
+
 #detail{
 	height: auto;
 }

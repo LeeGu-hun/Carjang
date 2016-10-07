@@ -7,9 +7,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <script>
-	$(document).ready(
+$(document).ready(
 		function() {
-	
 			/* LoginModal */
 			$("#menuLogin").click(function() {
 				$("#loginModal").modal('show');
@@ -61,12 +60,46 @@
 		
 			});
 			
+			//차량추가 숨기기
+			$('#carNumLabel').css('display', 'none');
+			$('#carKindLabel').css('display', 'none');
+			$('#carNum').css('display', 'none');
+			$('#carKind').css('display', 'none');
+			$('#btnCarAdd2').css('display', 'none');
+			$b = 1;
+			$('#btnCarAdd1').click(function() {	
+				if($b < 0) {
+					$('#btnCarAdd1').attr('value', '차량추가');
+					$('#btnCarAdd1').css('background', '#20b2aa');
+					
+					$('#carNumLabel').css('display', 'none');
+					$('#carKindLabel').css('display', 'none');
+					$('#carNum').css('display', 'none');
+					$('#carKind').css('display', 'none');
+					$('#btnCarAdd2').css('display', 'none');
+					$b = $b * -1
+				}
+				else {
+					$('#btnCarAdd1').attr('value', '등록취소');
+					$('#btnCarAdd1').css('background', 'red');
+					
+					$('#carNumLabel').css('display', '');
+					$('#carKindLabel').css('display', '');
+					$('#carNum').css('display', '');
+					$('#carKind').css('display', '');
+					$('#btnCarAdd2').css('display', '');
+					$b = $b * -1
+				}
+			});
 			
-	
-			
-			
-			
-			
+			$('#btnCarAdd2').click(function() {	
+				var str1 = $('#carKind').val();
+				var str2 = $('#carNum').val();
+				$("#hidden").value("str3");
+				
+				$("#carKinds").append("<option value=''>" + str1  +"/" + str2 + "</option>");
+			});
+			//차량추가 숨기기 끝
 		});
 </script>		
 <div id="headerBox">
@@ -75,8 +108,6 @@
 			<img id="mini camper van" src="<%=request.getContextPath()%>/images/mini camper van.png">
 		</div>
 		<div id="logo">	We Together <span id="bar">|</span> Carjang~!</div>
-		<div id="logoImg"><a href="#"><img id="mini camper van" src="<%=request.getContextPath()%>/images/mini camper van.png"></a></div>
-		<div id="logo">&nbsp;&nbsp;&nbsp;We Together <span id="bar">|</span> Carjang~!</div>
 	</div>
 	<div id="rightBox">
 		<div id="menuBox">

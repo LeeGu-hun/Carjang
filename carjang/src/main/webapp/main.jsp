@@ -123,6 +123,12 @@ $(document).ready(function() {
 		<c:when test="${page == 'board'}">
 			<%@ include file="/board/boardMain.jsp"%>
 		</c:when>
+		<c:when test="${page == 'mypage3'}">
+			<%@ include file="/member/myPage3.jsp"%>
+		</c:when>
+			<c:when test="${page == 'mypage4'}">
+			<%@ include file="/member/myPage4.jsp"%>
+		</c:when>
 	</c:choose>
 	<%@include file="/include/footer.jsp"%>
 

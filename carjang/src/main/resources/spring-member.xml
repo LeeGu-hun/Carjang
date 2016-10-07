@@ -28,6 +28,10 @@
 	<bean id="daoBoard" class="dao.DaoBoard">
 		<constructor-arg ref="dataSource" />
 	</bean>
+	
+	<bean id="daoDriver" class="dao.DaoDriver">
+		<constructor-arg ref="dataSource" />
+	</bean>
 
 	<bean id="boardSearch" class="board.BoardSearch" />
 	<bean id="boardInsert" class="board.BoardInsert" />
@@ -56,8 +60,15 @@
 		<constructor-arg ref="daoMember" /> 
 	</bean>
 
-	<bean id="driverService" class="model.DriverService">
-		<property name="daoMember" ref="daoMember"/>
-	</bean>  
+	<bean id="driverRegSvc" class="driver.DriverRegisterService">
+		<constructor-arg ref="daoDriver" /> 
+	</bean>
 
+	<bean id="driverService" class="model.DriverService">
+		<property name="daoDriver" ref="daoDriver"/>
+	</bean> 
+	
+	<bean id="carService" class="model.CarService">
+		<property name="daoMember" ref="daoMember"/>
+	</bean>
 </beans>

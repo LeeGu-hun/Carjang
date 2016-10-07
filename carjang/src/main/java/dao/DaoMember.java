@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.List;
 
 import javax.sql.DataSource;
@@ -13,7 +12,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.RowMapper;
 
-import member.Driver;
+import driver.Driver;
+import member.Car;
 import member.Member;
 
 public class DaoMember {
@@ -155,4 +155,22 @@ public class DaoMember {
 		
 		jdbcTemplate.update("DELETE FROM MEMBER WHERE MEM_ID = ?",	member.getMem_email());
 	}
+	
+	/*
+	    * 차 검색
+	    */
+	   public List<Car> selectById3(String memId) {
+	      List<Car> results = jdbcTemplate.query(
+	            "SELECT * FROM CAR WHERE CAR_DRV_ID = ?", new RowMapper<Car>() {
+	         public Car mapRow(ResultSet rs, int rowNum) throws SQLException {
+	            Car car = new Car(
+	                  rs.getString("CAR_NUM"), 
+	                  rs.getString("CAR_DRV_ID"), 
+	                  rs.getString("CAR_KIND"));
+	            return car;
+	         }
+	      }, memId);
+	      return results.isEmpty() ? null : results;
+	   }
+	   
 }

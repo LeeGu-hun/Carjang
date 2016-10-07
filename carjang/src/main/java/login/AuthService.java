@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import dao.DaoMember;
 import exception.IdPasswordNotMatchingException;
 import exception.MemberNotFoundException;
-import member.Driver;
 import member.Member;
 
 public class AuthService {

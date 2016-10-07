@@ -15,10 +15,12 @@
 	</bean> 
 	<bean class="controller.MemberController">
 		<property name="daoMember" ref="daoMember" />
+		<property name="daoDriver" ref="daoDriver" />
 		<property name="authService" ref="authService" />
 		<property name="changePasswordService" ref="changePwdSvc" />
 		<property name="memberRegisterService" ref="memberRegSvc" />
-		<property name="driverService" ref="driverService" /> 
+		<property name="driverRegisterService" ref="driverRegSvc" />
+		<property name="driverService" ref="driverService" />
+		<property name="carService" ref="carService" />  
 	</bean>
-
 </beans>
